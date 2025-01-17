@@ -1,0 +1,15 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: facture-service
+          uri: lb://FACTURE-SERVICE
+          predicates:
+            - Path=/api/factures/**
+        - id: reglement-service
+          uri: lb://REGLEMENT-SERVICE
+          predicates:
+            - Path=/api/reglements/**
+        
+
+         
